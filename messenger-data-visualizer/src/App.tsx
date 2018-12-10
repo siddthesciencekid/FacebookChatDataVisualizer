@@ -3,6 +3,8 @@ import './App.css';
 
 import logo from './logo.svg';
 
+import { Button } from 'reactstrap';
+
 class App extends React.Component {
   public render() {
     return (
@@ -14,6 +16,7 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Button color="danger">Danger!</Button>
       </div>
     );
   }
