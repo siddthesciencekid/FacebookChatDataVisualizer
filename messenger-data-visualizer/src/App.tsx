@@ -1,9 +1,8 @@
 import * as React from 'react';
 import './App.css';
+import Upload from './upload/Upload'
 
 import logo from './logo.svg';
-
-import { Button } from 'reactstrap';
 
 class App extends React.Component {
   public render() {
@@ -16,7 +15,7 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Button color="danger">Danger!</Button>
+        <Upload />
       </div>
     );
   }
