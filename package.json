@@ -1,34 +1,23 @@
 {
-  "name": "messenger-data-visualizer",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/reactstrap": "^6.4.3",
-    "bootstrap": "^4.1.3",
-    "express": "^4.16.4",
-    "multer": "^1.4.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts-ts": "^4.0.8",
-    "reactstrap": "^6.5.0"
-  },
-  "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
-  },
-  "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.12",
-    "@types/react": "^16.7.13",
-    "@types/react-dom": "^16.0.11",
-    "typescript": "^3.2.2"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "name": "messenger-chat-data-visualizer",
+    "version": "1.0.0",
+    "scripts": {
+        "client": "cd client && yarn start",
+        "server": "nodemon server.js",
+        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+        "dev:server": "cd client && yarn build && cd .. && yarn start",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cookie-parser": "^1.4.3",
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "express-fileupload": "^1.1.1-alpha.1",
+        "morgan": "^1.9.1",
+        "path": "^0.12.7"
+    },
+    "devDependencies": {
+        "concurrently": "^4.0.1"
+    }
 }
