@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs-extra');
 const path = require('path')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
@@ -29,20 +30,12 @@ app.use(fileUpload())
 app.use('/public', express.static(__dirname + '/public'))
 
 app.post('/upload', (req, res, next) => {
-  let uploadFile = req.files.file
-  const fileName = req.files.file.name
-  uploadFile.mv(
-    `${__dirname}/public/files/${fileName}`,
-    function (err) {
-      if (err) {
-        return res.status(500).send(err)
-      }
+    let uploadFile = req.files.file
+    const fileName = req.files.file.name
 
-      res.json({
-        file: `public/${req.files.file.name}`,
-      })
-    },
-  )
+    res.setHeader('Content-Type', 'application/json');
+    const json = fs.readJSONSync(`${__dirname}/data/${fileName}`);
+    res.send(json);
 })
 
 // catch 404 and forward to error handler

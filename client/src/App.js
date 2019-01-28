@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import axios from 'axios'
 
-const endpoint = 'http://localhost:8000/upload'
+const endpoint = '/upload'
 
 class App extends Component {
   constructor() {
@@ -32,6 +32,7 @@ class App extends Component {
       })
       .then(res => {
         console.log(res.statusText)
+        console.log(res.data.title);
       })
   }
   render() {
